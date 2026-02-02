@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Courses - BiniTutor</title>
+    
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-book-fill"></i> BiniTutor
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="courses.html">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="student-dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item ms-3">
+                        <a class="btn btn-primary" href="login.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="hero-section" style="padding: 3rem 0;">
+        <div class="container">
+            <h1>Explore Our Courses</h1>
+            <p>Find the perfect course to advance your career</p>
+        </div>
+    </section>
+
+    <!-- Course Catalog -->
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar Filters -->
+                <div class="col-lg-3 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Filter Courses</h5>
+                            
+                            <!-- Search -->
+                            <div class="mb-4">
+                                <label class="form-label">Search</label>
+                                <input type="text" class="form-control" id="searchCourse" placeholder="Search courses...">
+                            </div>
+
+                            <!-- Category Filter -->
+                            <div class="mb-4">
+                                <label class="form-label">Category</label>
+                                <select class="form-select" id="categoryFilter">
+                                    <option value="">All Categories</option>
+                                    <option value="development">Development</option>
+                                    <option value="business">Business</option>
+                                    <option value="design">Design</option>
+                                    <option value="marketing">Marketing</option>
+                                    <option value="data-science">Data Science</option>
+                                </select>
+                            </div>
+
+                            <!-- Level Filter -->
+                            <div class="mb-4">
+                                <label class="form-label">Level</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="beginner" id="levelBeginner">
+                                    <label class="form-check-label" for="levelBeginner">Beginner</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="intermediate" id="levelIntermediate">
+                                    <label class="form-check-label" for="levelIntermediate">Intermediate</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="advanced" id="levelAdvanced">
+                                    <label class="form-check-label" for="levelAdvanced">Advanced</label>
+                                </div>
+                            </div>
+
+                            <!-- Price Filter -->
+                            <div class="mb-4">
+                                <label class="form-label">Price Range</label>
+                                <select class="form-select" id="priceFilter">
+                                    <option value="">All Prices</option>
+                                    <option value="free">Free</option>
+                                    <option value="0-50">Under $50</option>
+                                    <option value="50-100">$50 - $100</option>
+                                    <option value="100+">$100+</option>
+                                </select>
+                            </div>
+
+                            <button class="btn btn-primary w-100" onclick="filterCourses()">Apply Filters</button>
+                            <button class="btn btn-outline-primary w-100 mt-2" onclick="resetFilters()">Reset</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course List -->
+                <div class="col-lg-9">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <p class="mb-0"><span id="courseCount">12</span> courses found</p>
+                        <select class="form-select w-auto" id="sortBy">
+                            <option value="popular">Most Popular</option>
+                            <option value="newest">Newest</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating">Highest Rated</option>
+                        </select>
+                    </div>
+
+                    <div class="row" id="courseList">
+                        <!-- Course Card 1 -->
+                        <div class="col-md-6 mb-4">
+                            <div class="card course-card">
+                                <img src="./assets/images/placeholder.png" class="card-img-top" alt="Course">
+                                <div class="card-body">
+                                    <span class="badge badge-primary mb-2">Development</span>
+                                    <h5 class="card-title">Complete Web Development Bootcamp</h5>
+                                    <div class="course-rating mb-2">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-half"></i>
+                                        <span class="ms-1">(4.5)</span>
+                                    </div>
+                                    <p class="card-text">Master web development from scratch with HTML, CSS, JavaScript, and modern frameworks.</p>
+                                    <div class="course-meta">
+                                        <span><i class="bi bi-person"></i> 15,234 students</span>
+                                        <span><i class="bi bi-clock"></i> 40 hours</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center mt-3">
+                                        <span class="course-price">$49.99</span>
+                                        <a href="course-detail.html" class="btn btn-primary">View Course</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Course Card 2 -->
+                        <div class="col-md-6 mb-4">
+                            <div class="card course-card">
+                                <img src="./assets/images/placeholder.png" class="card-img-top" alt="Course">
+                                <div class="card-body">
+                                    <span class="badge badge-primary mb-2">Data Science</span>
+                                    <h5 class="card-title">Python for Data Science</h5>
+                                    <div class="course-rating mb-2">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <span class="ms-1">(5.0)</span>
+                                    </div>
+                                    <p class="card-text">Learn Python programming and data analysis with hands-on projects and real datasets.</p>
+                                    <div class="course-meta">
+                                        <span><i class="bi bi-person"></i> 12,890 students</span>
+                                        <span><i class="bi bi-clock"></i> 35 hours</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center mt-3">
+                                        <span class="course-price">$59.99</span>
+                                        <a href="course-detail.html" class="btn btn-primary">View Course</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Course Card 3 -->
+                        <div class="col-md-6 mb-4">
+                            <div class="card course-card">
+                                <img src="./assets/images/placeholder.png" class="card-img-top" alt="Course">
+                                <div class="card-body">
+                                    <span class="badge badge-secondary mb-2">Marketing</span>
+                                    <h5 class="card-title">Digital Marketing Masterclass</h5>
+                                    <div class="course-rating mb-2">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star"></i>
+                                        <span class="ms-1">(4.0)</span>
+                                    </div>
+                                    <p class="card-text">Master SEO, social media marketing, email campaigns, and digital advertising.</p>
+                                    <div class="course-meta">
+                                        <span><i class="bi bi-person"></i> 9,456 students</span>
+                                        <span><i class="bi bi-clock"></i> 25 hours</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center mt-3">
+                                        <span class="course-price">$39.99</span>
+                                        <a href="course-detail.html" class="btn btn-primary">View Course</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Course Card 4 -->
+                        <div class="col-md-6 mb-4">
+                            <div class="card course-card">
+                                <img src="./assets/images/placeholder.png" class="card-img-top" alt="Course">
+                                <div class="card-body">
+                                    <span class="badge badge-primary mb-2">Design</span>
+                                    <h5 class="card-title">UI/UX Design Fundamentals</h5>
+                                    <div class="course-rating mb-2">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-half"></i>
+                                        <span class="ms-1">(4.6)</span>
+                                    </div>
+                                    <p class="card-text">Learn user interface and user experience design principles with Figma and Adobe XD.</p>
+                                    <div class="course-meta">
+                                        <span><i class="bi bi-person"></i> 8,723 students</span>
+                                        <span><i class="bi bi-clock"></i> 30 hours</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center mt-3">
+                                        <span class="course-price">$44.99</span>
+                                        <a href="course-detail.html" class="btn btn-primary">View Course</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Course Card 5 -->
+                        <div class="col-md-6 mb-4">
+                            <div class="card course-card">
+                                <img src="./assets/images/placeholder.png" class="card-img-top" alt="Course">
+                                <div class="card-body">
+                                    <span class="badge badge-primary mb-2">Data Science</span>
+                                    <h5 class="card-title">Machine Learning A-Z</h5>
+                                    <div class="course-rating mb-2">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <span class="ms-1">(4.8)</span>
+                                    </div>
+                                    <p class="card-text">Complete guide to Machine Learning with Python, covering algorithms and neural networks.</p>
+                                    <div class="course-meta">
+                                        <span><i class="bi bi-person"></i> 18,900 students</span>
+                                        <span><i class="bi bi-clock"></i> 50 hours</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center mt-3">
+                                        <span class="course-price">$79.99</span>
+                                        <a href="course-detail.html" class="btn btn-primary">View Course</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Course Card 6 -->
+                        <div class="col-md-6 mb-4">
+                            <div class="card course-card">
+                                <img src="./assets/images/placeholder.png" class="card-img-top" alt="Course">
+                                <div class="card-body">
+                                    <span class="badge badge-secondary mb-2">Business</span>
+                                    <h5 class="card-title">Business Strategy Essentials</h5>
+                                    <div class="course-rating mb-2">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star"></i>
+                                        <span class="ms-1">(4.2)</span>
+                                    </div>
+                                    <p class="card-text">Learn strategic planning, competitive analysis, and business model innovation.</p>
+                                    <div class="course-meta">
+                                        <span><i class="bi bi-person"></i> 6,234 students</span>
+                                        <span><i class="bi bi-clock"></i> 20 hours</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center mt-3">
+                                        <span class="course-price">$34.99</span>
+                                        <a href="course-detail.html" class="btn btn-primary">View Course</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <nav aria-label="Course pagination">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5><i class="bi bi-book-fill"></i> BiniTutor</h5>
+                    <p>Empowering learners worldwide with quality education and expert-led courses.</p>
+                    <div class="mt-3">
+                        <a href="#" class="me-3"><i class="bi bi-facebook fs-4"></i></a>
+                        <a href="#" class="me-3"><i class="bi bi-twitter fs-4"></i></a>
+                        <a href="#" class="me-3"><i class="bi bi-linkedin fs-4"></i></a>
+                        <a href="#"><i class="bi bi-instagram fs-4"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h5>Company</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#">About Us</a></li>
+                        <li class="mb-2"><a href="#">Careers</a></li>
+                        <li class="mb-2"><a href="#">Blog</a></li>
+                        <li class="mb-2"><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#">Help Center</a></li>
+                        <li class="mb-2"><a href="#">FAQ</a></li>
+                        <li class="mb-2"><a href="#">Terms</a></li>
+                        <li class="mb-2"><a href="#">Privacy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Newsletter</h5>
+                    <p>Subscribe to get updates on new courses and offers</p>
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Your email">
+                        <button class="btn btn-secondary" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 BiniTutor. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5.3 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        function filterCourses() {
+            Swal.fire({
+                icon: 'success',
+                title: 'Filters Applied',
+                text: 'Courses have been filtered based on your criteria',
+                confirmButtonColor: '#234756'
+            });
+        }
+
+        function resetFilters() {
+            document.getElementById('searchCourse').value = '';
+            document.getElementById('categoryFilter').value = '';
+            document.getElementById('priceFilter').value = '';
+            document.querySelectorAll('.form-check-input').forEach(cb => cb.checked = false);
+        }
+    </script>
+</body>
+</html>

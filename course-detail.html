@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Details - BiniTutor</title>
+    
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-book-fill"></i> BiniTutor
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="courses.html">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="student-dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item ms-3">
+                        <a class="btn btn-primary" href="login.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Course Header -->
+    <section class="hero-section" style="padding: 3rem 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <span class="badge badge-primary mb-2" style="background-color: var(--primary-color);">Development</span>
+                    <h1 style="font-size: 2.5rem;">Complete Web Development Bootcamp</h1>
+                    <p class="lead">Master web development from scratch with HTML, CSS, JavaScript, and modern frameworks</p>
+                    <div class="d-flex align-items-center gap-4 mb-3">
+                        <div class="course-rating">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                            <span class="ms-1">4.5 (2,340 ratings)</span>
+                        </div>
+                        <div>
+                            <i class="bi bi-person"></i> 15,234 students
+                        </div>
+                    </div>
+                    <p><i class="bi bi-clock"></i> Last updated: January 2026</p>
+                    <p><i class="bi bi-globe"></i> English, Spanish, French</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Content -->
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <!-- Main Content -->
+                <div class="col-lg-8">
+                    <!-- Preview Video -->
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Course Preview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- What You'll Learn -->
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h3 class="card-title">What You'll Learn</h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Build responsive websites with HTML5 and CSS3</li>
+                                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Master JavaScript fundamentals and ES6+</li>
+                                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Create interactive web applications</li>
+                                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Use React.js for modern UI development</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Build RESTful APIs with Node.js</li>
+                                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Work with databases (MongoDB & SQL)</li>
+                                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Deploy applications to production</li>
+                                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Version control with Git and GitHub</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course Content/Curriculum -->
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h3 class="card-title mb-4">Course Content</h3>
+                            <p>8 sections • 156 lectures • 40h 25m total length</p>
+
+                            <!-- Section 1 -->
+                            <div class="curriculum-section">
+                                <div class="curriculum-header" data-bs-toggle="collapse" data-bs-target="#section1">
+                                    <div>
+                                        <strong>Section 1: Introduction to Web Development</strong>
+                                        <small class="d-block text-muted">12 lectures • 1h 30m</small>
+                                    </div>
+                                    <i class="bi bi-chevron-down"></i>
+                                </div>
+                                <div class="collapse show curriculum-content" id="section1">
+                                    <div class="lecture-item">
+                                        <div>
+                                            <i class="bi bi-play-circle me-2"></i>
+                                            <span>Welcome to the Course</span>
+                                        </div>
+                                        <span class="text-muted">5:23</span>
+                                    </div>
+                                    <div class="lecture-item">
+                                        <div>
+                                            <i class="bi bi-play-circle me-2"></i>
+                                            <span>Setting Up Your Development Environment</span>
+                                        </div>
+                                        <span class="text-muted">12:45</span>
+                                    </div>
+                                    <div class="lecture-item">
+                                        <div>
+                                            <i class="bi bi-file-text me-2"></i>
+                                            <span>Course Resources and Materials</span>
+                                        </div>
+                                        <span class="text-muted">3 pages</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Section 2 -->
+                            <div class="curriculum-section">
+                                <div class="curriculum-header" data-bs-toggle="collapse" data-bs-target="#section2">
+                                    <div>
+                                        <strong>Section 2: HTML Fundamentals</strong>
+                                        <small class="d-block text-muted">18 lectures • 2h 15m</small>
+                                    </div>
+                                    <i class="bi bi-chevron-down"></i>
+                                </div>
+                                <div class="collapse curriculum-content" id="section2">
+                                    <div class="lecture-item">
+                                        <div>
+                                            <i class="bi bi-play-circle me-2"></i>
+                                            <span>Introduction to HTML</span>
+                                        </div>
+                                        <span class="text-muted">8:30</span>
+                                    </div>
+                                    <div class="lecture-item">
+                                        <div>
+                                            <i class="bi bi-play-circle me-2"></i>
+                                            <span>HTML Tags and Elements</span>
+                                        </div>
+                                        <span class="text-muted">15:20</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Section 3 -->
+                            <div class="curriculum-section">
+                                <div class="curriculum-header" data-bs-toggle="collapse" data-bs-target="#section3">
+                                    <div>
+                                        <strong>Section 3: CSS Mastery</strong>
+                                        <small class="d-block text-muted">25 lectures • 3h 45m</small>
+                                    </div>
+                                    <i class="bi bi-chevron-down"></i>
+                                </div>
+                                <div class="collapse curriculum-content" id="section3">
+                                    <div class="lecture-item">
+                                        <div>
+                                            <i class="bi bi-play-circle me-2"></i>
+                                            <span>CSS Basics and Selectors</span>
+                                        </div>
+                                        <span class="text-muted">10:15</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Requirements -->
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h3 class="card-title">Requirements</h3>
+                            <ul>
+                                <li>A computer with internet connection (Windows, Mac, or Linux)</li>
+                                <li>No prior programming experience required</li>
+                                <li>Passion for learning web development</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h3 class="card-title">Description</h3>
+                            <p>This comprehensive web development course will take you from complete beginner to confident developer. You'll learn everything you need to build modern, responsive websites and web applications.</p>
+                            <p>Starting with the fundamentals of HTML and CSS, you'll progressively build your skills through hands-on projects and real-world examples. You'll master JavaScript, the language that powers the modern web, and learn to use popular frameworks and libraries like React.</p>
+                            <p>By the end of this course, you'll have built multiple projects including a portfolio website, a todo app, an e-commerce site, and more. You'll also learn professional development practices like version control with Git, debugging techniques, and deployment strategies.</p>
+                            <h5 class="mt-4">Who this course is for:</h5>
+                            <ul>
+                                <li>Beginners who want to learn web development</li>
+                                <li>Career changers looking to break into tech</li>
+                                <li>Anyone who wants to build their own websites</li>
+                                <li>Entrepreneurs who want to create their own web applications</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Instructor -->
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h3 class="card-title mb-4">Instructor</h3>
+                            <div class="instructor-card">
+                                <img src="" alt="Instructor" class="instructor-avatar">
+                                <div>
+                                    <h5 class="mb-1">John Doe</h5>
+                                    <p class="text-muted mb-2">Senior Web Developer & Instructor</p>
+                                    <div class="mb-2">
+                                        <i class="bi bi-star-fill text-warning"></i> 4.8 Instructor Rating
+                                        <span class="ms-3"><i class="bi bi-people"></i> 45,678 Students</span>
+                                        <span class="ms-3"><i class="bi bi-play-circle"></i> 12 Courses</span>
+                                    </div>
+                                    <p>John is a passionate web developer with over 10 years of experience building web applications for startups and Fortune 500 companies. He's taught over 45,000 students worldwide.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Student Reviews -->
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h3 class="card-title mb-4">Student Reviews</h3>
+                            
+                            <div class="review-card">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <div>
+                                        <strong class="reviewer-name">Sarah Johnson</strong>
+                                        <div class="course-rating">
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                        </div>
+                                    </div>
+                                    <span class="review-date">2 weeks ago</span>
+                                </div>
+                                <p>This course is absolutely fantastic! The instructor explains everything clearly and the projects are really practical. I landed my first web developer job after completing this course.</p>
+                            </div>
+
+                            <div class="review-card">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <div>
+                                        <strong class="reviewer-name">Michael Chen</strong>
+                                        <div class="course-rating">
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star"></i>
+                                        </div>
+                                    </div>
+                                    <span class="review-date">1 month ago</span>
+                                </div>
+                                <p>Great course with lots of content. The only reason I'm giving 4 stars instead of 5 is that I wish there were more advanced topics covered, but overall it's excellent for beginners.</p>
+                            </div>
+
+                            <div class="review-card">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <div>
+                                        <strong class="reviewer-name">Emily Rodriguez</strong>
+                                        <div class="course-rating">
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                        </div>
+                                    </div>
+                                    <span class="review-date">2 months ago</span>
+                                </div>
+                                <p>Best investment I've made in my career! The course is well-structured, easy to follow, and the instructor is very responsive to questions. Highly recommended!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-lg-4">
+                    <div class="card sticky-top" style="top: 100px;">
+                        <div class="card-body">
+                            <h2 class="course-price mb-3">$49.99</h2>
+                            <button class="btn btn-primary w-100 mb-2" onclick="enrollCourse()">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                            <button class="btn btn-secondary w-100 mb-3" onclick="buyNow()">
+                                Buy Now
+                            </button>
+                            
+                            <p class="text-center mb-3">30-Day Money-Back Guarantee</p>
+                            
+                            <h5 class="mb-3">This course includes:</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-play-circle text-primary me-2"></i>40 hours on-demand video</li>
+                                <li class="mb-2"><i class="bi bi-file-earmark-text text-primary me-2"></i>45 articles</li>
+                                <li class="mb-2"><i class="bi bi-download text-primary me-2"></i>30 downloadable resources</li>
+                                <li class="mb-2"><i class="bi bi-infinity text-primary me-2"></i>Full lifetime access</li>
+                                <li class="mb-2"><i class="bi bi-phone text-primary me-2"></i>Access on mobile and TV</li>
+                                <li class="mb-2"><i class="bi bi-award text-primary me-2"></i>Certificate of completion</li>
+                            </ul>
+
+                            <div class="mt-4">
+                                <button class="btn btn-outline-primary w-100 mb-2">
+                                    <i class="bi bi-heart"></i> Add to Wishlist
+                                </button>
+                                <button class="btn btn-outline-primary w-100">
+                                    <i class="bi bi-gift"></i> Gift this Course
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5><i class="bi bi-book-fill"></i> BiniTutor</h5>
+                    <p>Empowering learners worldwide with quality education and expert-led courses.</p>
+                    <div class="mt-3">
+                        <a href="#" class="me-3"><i class="bi bi-facebook fs-4"></i></a>
+                        <a href="#" class="me-3"><i class="bi bi-twitter fs-4"></i></a>
+                        <a href="#" class="me-3"><i class="bi bi-linkedin fs-4"></i></a>
+                        <a href="#"><i class="bi bi-instagram fs-4"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h5>Company</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#">About Us</a></li>
+                        <li class="mb-2"><a href="#">Careers</a></li>
+                        <li class="mb-2"><a href="#">Blog</a></li>
+                        <li class="mb-2"><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#">Help Center</a></li>
+                        <li class="mb-2"><a href="#">FAQ</a></li>
+                        <li class="mb-2"><a href="#">Terms</a></li>
+                        <li class="mb-2"><a href="#">Privacy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Newsletter</h5>
+                    <p>Subscribe to get updates on new courses and offers</p>
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Your email">
+                        <button class="btn btn-secondary" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 BiniTutor. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5.3 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        function enrollCourse() {
+            Swal.fire({
+                icon: 'success',
+                title: 'Added to Cart!',
+                text: 'Course has been added to your cart',
+                confirmButtonColor: '#234756'
+            });
+        }
+
+        function buyNow() {
+            Swal.fire({
+                icon: 'info',
+                title: 'Checkout',
+                text: 'Redirecting to checkout page...',
+                confirmButtonColor: '#234756',
+                timer: 2000
+            });
+        }
+    </script>
+</body>
+</html>
